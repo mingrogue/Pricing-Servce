@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="container">
+    <header><h2>Create store</h2></header>
+    <section class="create_store_form">
+        <form method="post">
+            <div class="form-group">
+                <label for="name">name</label>
+                <input name="name" id="name" type="text"  class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="URL_Prefix">URL_Prefix</label>
+                <input name="URL_Prefix" id="URL_Prefix" type="text"  class="form-control"/>
+            </div>
+
+            <div >
+                <label for="tag_name">HTML Tag Name</label>
+                <input name="tag_name" id="tag_name" type="text" aria-describedby="tagNameHelp" class="form-control"/>
+                <small id="tagNameHelp">
+                    What HTML tag contains the price info in this store?
+                </small>
+
+            </div>
+            <div >
+                <label for="HTML_Query">HTML_Query</label>
+                <input name="HTML_Query" id="HTML_Query" type="text" aria-describedby="tagNameHelp" class="form-control"/>
+                <small id="QueryHelp">
+                    What HTML query contains the price in the store?
+                </small>
+
+            </div>
+            <div class="w-25 p-3" style=""></div>
+            <button type="submit" class="btn btn-success">Create</button>
+            <div class="alert alert-light" role="alert">
+                {{ text }}
+            </div>
+
+        </form>
+    </section>
+
+</div>
+{% endblock %}

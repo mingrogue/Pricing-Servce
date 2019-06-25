@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="container">
+    <header><h2>User Registration</h2></header>
+    <section class="register_form">
+        <form method="post">
+            <div class="form-group">
+                <label for="email">email</label>
+                <input name="email" id="email" type="text"  class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input name="password" id="password" type="text"  class="form-control"/>
+            </div>
+            <div class="w-25 p-3" style=""></div>
+            <button type="submit" class="btn btn-success">Sign Up</button>
+            <div>
+                {{ text }}
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

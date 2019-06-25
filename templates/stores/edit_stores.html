@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="container">
+    <header><h2>Edit store</h2></header>
+    <section class="edit_store_form">
+        {% for st in store %}
+            <form method="post">
+                <div class="form-group">
+                    <label for="name">name</label>
+                    <input name="name" id="name" type="text"  class="form-control" placeholder="{{ st.name }}" />
+                </div>
+                <div class="form-group">
+                    <label for="URL_Prefix">URL_Prefix</label>
+                    <input name="URL_Prefix" id="URL_Prefix" type="text"  class="form-control" placeholder="{{ st.URL_Prefix }} " readonly/>
+                </div>
+                <div >
+                    <label for="tag_name">HTML Tag Name</label>
+                    <input name="tag_name" id="tag_name" type="text" aria-describedby="tagNameHelp" class="form-control" placeholder="{{ st.tag_name}}"/>
+                    <small id="tagNameHelp">
+                        give what you want to change
+                    </small>
+
+                </div>
+                <div >
+                    <label for="HTML_Query">HTML_Query</label>
+                    <input name="HTML_Query" id="HTML_Query" type="text" aria-describedby="tagNameHelp" class="form-control" placeholder="{{ st.query }}"/>
+                    <small id="QueryHelp">
+                        what change do you want in the query
+                    </small>
+
+                </div>
+
+                <div class="w-25 p-3" style=""></div>
+                    <button type="submit" class="btn btn-success">Edit</button>
+                <div>
+                    <label class="col-sm-2 col-form-label">{{ text }}</label>
+                </div>
+        {% endfor %}
+        </form>
+    </section>
+</div>
+{% endblock %}

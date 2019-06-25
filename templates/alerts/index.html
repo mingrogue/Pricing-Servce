@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <header>
+        <h2>Alerts</h2>
+    </header>
+        {% for alert in alerts %}
+            <div class="list-group mb7">
+                    <a href="{{ alert.item.url }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ alert.name }}</h5>
+                        </div>
+                    </a>
+                <div class="btn-group-toggle" >
+                    <a class="btn btn-secondary btn-sm" href="{{ url_for('alerts.edit_alert', alert_id=alert._id) }}">
+                        Edit alert
+                    </a>
+
+                    <a class="btn btn-danger btn-sm" href="{{ url_for('alerts.delete_alert', alert_id=alert._id) }}">
+                        Permanently Delete
+                    </a>
+                    <a class="btn btn-info btn-sm" href="{{ alert.item_url }}">see item</a>
+
+                </div>
+                <div class="w-25 p-3" style=""></div>
+            </div>
+        {% endfor %}
+        <div class="w-25 p-3" style=""></div>
+        <a class="btn btn-primary" href="{{ url_for('alerts.new_alert') }}">
+                Create New
+        </a>
+        <div class="w-25 p-3" style=""></div>
+</div>
+{% endblock %}
+
+
+
+

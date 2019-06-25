@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="container">
+    <header><h2>Update Alert</h2></header>
+    <section class="update_alert_form">
+        {% for a in alert %}
+        <form method="post">
+            <div class="form-group">
+                <label for="disabledTextInput">item name</label>
+                <input name="item_name" id="disabledTextInput"   type="text"  class="form-control" value="{{ a.name }}" disabled/>
+            </div>
+            <div class="form-group">
+                <label for="disabledTextInput1">item_url</label>
+                <input name="item_url" id="disabledTextInput1"  type="text"  class="form-control" placeholder="{{ a.item_url }}" disabled />
+            </div>
+
+            <div >
+                <label for="price_limit">price limit</label>
+                <input name="price_limit" id="price_limit" type="text" aria-describedby="tagNameHelp" class="form-control" placeholder="{{a.Price_limit}}" />
+                <small id="tagNameHelp">
+                    enter the price limit of the item you want to get notified
+                </small>
+
+            </div>
+            <div class="w-25 p-3" style=""></div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        {% endfor %}
+        </form>
+    </section>
+
+</div>
+{% endblock %}
